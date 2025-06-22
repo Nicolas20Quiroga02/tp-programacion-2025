@@ -54,7 +54,27 @@
                             <p class="card-text">
                                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
                                     {% for poketype in img.types %}
-                                    <strong><em>{{poketype}}</em></strong>
+                                        {% if poketype == 'fire' %}
+                                                <span style="background-color: rgb(252, 8, 8); color: white; padding: 4px 8px; border-radius: 999px; ">
+                                                    {{ poketype }}
+                                                </span>
+                                            {% elif poketype == 'water' %}
+                                                <span style="background-color: rgb(46, 12, 236); color: white; padding: 4px 8px; border-radius: 999px;">
+                                                    {{ poketype }}
+                                                </span>
+                                            {% elif poketype == 'grass' %}
+                                                <span style="background-color: rgb(8, 252, 8); color: white; padding: 4px 8px; border-radius: 999px;">
+                                                    {{ poketype }}
+                                                </span>
+                                            {% elif poketype == 'poison' %}
+                                                <span style="background-color: rgb(132, 5, 250); color: white; padding: 4px 8px; border-radius: 999px;">
+                                                    {{ poketype }}
+                                                </span>
+                                            {% else %}
+                                                <span style="background-color: rgb(197, 126, 34); color: white; padding: 4px 8px; border-radius: 999px;">
+                                                    {{ poketype }}
+                                                </span>
+                                            {% endif %}
                                     {% endfor %} 
                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>
